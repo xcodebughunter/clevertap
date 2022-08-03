@@ -1,1 +1,8 @@
-# clevertap
+# Clevertap
+
+# Folder /web
+
+1. Do a basic clevertap integration on a sample website.
+2. Add a button on the webpage.
+3. On Click of the above button push Product Viewed Event, with properties: Product ID = 1 & Product Image = https://d35fo82fjcw0y8.cloudfront.net/2018/07/26020307/customer-success-clevertap.jpg & Product Name = CleverTap
+
