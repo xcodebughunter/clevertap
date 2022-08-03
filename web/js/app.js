@@ -2,7 +2,7 @@
 var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
 // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
 clevertap.account.push({"id": "TEST-Z88-WKZ-956Z"});
-clevertap.privacy.push({optOut: true}); //set the flag to true, if the user of the device opts out of sharing their data
+clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
 clevertap.privacy.push({useIP: true}); //set the flag to true, if the user agrees to share their IP data
 (function () {
         var wzrk = document.createElement('script');
@@ -12,20 +12,19 @@ clevertap.privacy.push({useIP: true}); //set the flag to true, if the user agree
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(wzrk, s);
 })();
-
 function sendClevertapEvent() {
     var clevertapUserLogin = clevertap.onUserLogin.push({
         "Site": {
-        "Name": "Jose Luis Duarte Mesa",            // String
-        "Identity": 573006573177,              // String or number
-        "Email": "jidesh+jochiduarte@clevertap.com",         // Email address of the user
-        "Phone": "+573006573177",           // Phone (with the country code)
+        "Name": "Jose Luis Duarte",            // String
+        "Identity": 573142797659,              // String or number
+        "Email": "jidesh+joseduarte@clevertap.com",         // Email address of the user
+        "Phone": "+573142797659",           // Phone (with the country code)
         "Gender": "M",                     // Can be either M or F
         "DOB": new Date(),                 // Date of Birth. Date object
 
     // optional fields. controls whether the user will be sent email, push etc.
         "MSG-email": true,                // Disable email notifications
-        "MSG-push": false,                  // Enable push notifications
+        "MSG-push": true,                  // Enable push notifications
         "MSG-sms": false,                   // Enable sms notifications
         "MSG-whatsapp": false,              // Enable WhatsApp notifications
         
@@ -43,5 +42,16 @@ function sendClevertapEvent() {
         if(clevertapEventPush === 0) {
             alert("Event sent successfully!!")
         }
+        
+        // Requesting User Permissions
+        const clevertapNotification = clevertap.notifications.push({
+            "titleText": 'Would you like to receive Push Notifications?',
+            "bodyText": 'We promise to only send you relevant content and give you updates on your transactions',
+            "okButtonText": 'Sign me up!',
+            "rejectButtonText": 'No thanks :(',
+            "okButtonColor": '#F28046',
+            "askAgainTimeInSeconds":5
+        });
+
     }
 }
