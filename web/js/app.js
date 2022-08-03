@@ -2,8 +2,8 @@
 var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
 // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
 clevertap.account.push({"id": "TEST-Z88-WKZ-956Z"});
-clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
-clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
+clevertap.privacy.push({optOut: true}); //set the flag to true, if the user of the device opts out of sharing their data
+clevertap.privacy.push({useIP: true}); //set the flag to true, if the user agrees to share their IP data
 (function () {
         var wzrk = document.createElement('script');
         wzrk.type = 'text/javascript';
@@ -17,7 +17,7 @@ function sendClevertapEvent() {
     var clevertapUserLogin = clevertap.onUserLogin.push({
         "Site": {
         "Name": "Jose Luis Duarte Mesa",            // String
-        "Identity": 123456789,              // String or number
+        "Identity": 573006573177,              // String or number
         "Email": "jidesh+jochiduarte@clevertap.com",         // Email address of the user
         "Phone": "+573006573177",           // Phone (with the country code)
         "Gender": "M",                     // Can be either M or F
