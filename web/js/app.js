@@ -18,7 +18,7 @@ function sendClevertapEvent() {
         "Site": {
         "Name": "Jose Luis Duarte Mesa",            // String
         "Identity": 123456789,              // String or number
-        "Email": "info@jochiduarte.comc.o",         // Email address of the user
+        "Email": "jidesh+jochiduarte@clevertap.com",         // Email address of the user
         "Phone": "+573006573177",           // Phone (with the country code)
         "Gender": "M",                     // Can be either M or F
         "DOB": new Date(),                 // Date of Birth. Date object
