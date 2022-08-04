@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CleverTapSDK
 
 @main
 struct ClevertapApp: App {
@@ -15,11 +14,4 @@ struct ClevertapApp: App {
             ContentView()
         }
     }
-    
-    let profile: Dictionary<String, AnyObject> = [
-        "Name": "Jose Luis Duarte",
-        "Email": "jidesh+joseduarte@clevertap.com",
-    ]
-
-    CleverTap.sharedInstance()?.onUserLogin(profile)
 }
